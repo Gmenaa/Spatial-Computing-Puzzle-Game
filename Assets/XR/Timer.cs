@@ -62,7 +62,7 @@ public class Timer: MonoBehaviour
 
     // before first frame
         // initialize variables
-    public void Start()
+    void Start()
     {
         rawTimeRemaining = InitialTimeRemaining;
         timeText.text = GetFormattedTime(rawTimeRemaining);
