@@ -71,6 +71,12 @@ public class GameLoop : MonoBehaviour
         }
     }
 
+    // ! this was added by Gabriel to test the win condition
+    public void TriggerWin()
+    {
+        isSolved = true;
+    }
+
     void HandleGameOver()
     {
         // FIXME:

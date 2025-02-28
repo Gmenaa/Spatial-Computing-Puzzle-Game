@@ -9,6 +9,7 @@ TagManager:
   - orangeBeaker
   - yellowBeaker
   - redBeaker
+  - MazeBall
   layers:
   - Default
   - TransparentFX
