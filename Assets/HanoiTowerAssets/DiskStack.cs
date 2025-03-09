@@ -43,17 +43,27 @@ public class DiskStack : MonoBehaviour
         return null;
     }
     
+    private bool IsStackOrdered()
+    {
+        Transform[] diskArray = diskStack.ToArray();
+        for (int i = 0; i < diskArray.Length - 1; i++)
+        {
+            if (diskArray[i].localScale.x < diskArray[i + 1].localScale.x)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
     
     private void CheckWinCondition()
     {
         Debug.Log($"Count {diskStack.Count}");
         Debug.Log($"totalDisks {totalDisks}");
         
-        if (diskStack.Count == totalDisks)
+        if (diskStack.Count == totalDisks && IsStackOrdered())
         {
             Debug.Log($"<color=green>WIN CONDITION MET! Rod {gameObject.name} has all {totalDisks} disks.</color>");
         }
     }
-    
-
 }
