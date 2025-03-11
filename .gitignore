@@ -78,3 +78,5 @@ crashlytics-build.properties
 
 # IDE project files
 .vscode/
+Assets/Oculus/OculusProjectConfig.asset
+Assets/Oculus/OculusProjectConfig.asset
