@@ -10,6 +10,7 @@ TagManager:
   - yellowBeaker
   - redBeaker
   - MazeBall
+  - Disk
   layers:
   - Default
   - TransparentFX
