@@ -28,6 +28,7 @@ public class Timer: MonoBehaviour
     public float InitialTimeRemaining {get {return initialTimeRemaining;} set {initialTimeRemaining = value;}}  // the value the timer starts at
 
     private float rawTimeRemaining;                                                                             // the time remaining, as a float
+    public float TimeRemaining {get { return rawTimeRemaining; }}                                                // the time remaining, as a property
     private bool isTimerRunning;
     public bool IsTimerRunning {get {return isTimerRunning;}}                                                   // boolean check of whether the timer is still running
     

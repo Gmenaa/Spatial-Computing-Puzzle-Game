@@ -40,6 +40,9 @@ public class GameLoop : MonoBehaviour
     [SerializeField]
     private bool restartGame;   // the game over menu will likely have a 'Restart Game' button, this gets sets to true if user clicks restart
 
+    [SerializeField]
+    private MusicAndFilterController musicAndFilterController;
+
     // handlers
 
     void HandleSolved()
@@ -49,6 +52,13 @@ public class GameLoop : MonoBehaviour
             // for last room, the game ends and a 'You Win' screen appears?
         
         Debug.Log("Solved!");
+
+        // Optionally fade out music/effects over 2 seconds
+        if (musicAndFilterController != null)
+        {
+            musicAndFilterController.PlayLevelCompleteSound();
+            musicAndFilterController.FadeBackToDefaults(2f);
+        }
 
         // FIXME:
             // will need information from the puzzle script whether it is the last room or not
@@ -71,7 +81,6 @@ public class GameLoop : MonoBehaviour
         }
     }
 
-    // ! this was added by Gabriel to test the win condition
     public void TriggerWin()
     {
         isSolved = true;
@@ -85,6 +94,14 @@ public class GameLoop : MonoBehaviour
             // that menu will probably have a restart button on it so you can restart the puzzle
         
         Debug.Log("Game Over!");
+
+        if (musicAndFilterController != null)
+        {
+            musicAndFilterController.PlayGameOverSound();
+
+            // Optionally fade out the music and effects, just like a "win"
+            musicAndFilterController.FadeBackToDefaults(2f);
+        }
 
         // FIXME:
             // restartGame will need to be updated upon user interaction with the menuu
@@ -128,11 +145,12 @@ public class GameLoop : MonoBehaviour
                 HandleSolved();
             }
         }
-        else if (timer.DidTimeRunOut)
+        else if (timer.DidTimeRunOut && !isGameOver)
         {
             // FIXME:
                 // handle the situation that the timer has run out
             
+            isGameOver = true;
             HandleGameOver();
         }
     }
