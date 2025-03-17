@@ -6,36 +6,13 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class SnapInteractableVisuals : MonoBehaviour
+public class SnapGhost : MonoBehaviour
 {
+    [SerializeField] private Material _ghostMaterial;
     [SerializeField] private SnapInteractable _snapInteractable;
-    [SerializeField] private Material _hoverMaterial;
-
     private GameObject _ghostObject;
     private SnapInteractor _currentInteractor;
 
-    private void OnEnable()
-    {
-        if (_snapInteractable != null)
-        {
-            _snapInteractable.WhenInteractorAdded.Action += HandleInteractorAdded;
-            _snapInteractable.WhenSelectingInteractorViewAdded += HandleSelectingInteractorViewAdded;
-            _snapInteractable.WhenInteractorViewRemoved += HandleInteractorViewRemoved;
-            _snapInteractable.WhenInteractorViewAdded += HandleInteractorViewAdded;
-        }
-    }
-
-    private void OnDisable()
-    {
-        if (_snapInteractable != null)
-        {
-            _snapInteractable.WhenInteractorAdded.Action -= HandleInteractorAdded;
-            _snapInteractable.WhenSelectingInteractorViewAdded -= HandleSelectingInteractorViewAdded;
-            _snapInteractable.WhenInteractorViewRemoved -= HandleInteractorViewRemoved;
-            _snapInteractable.WhenInteractorViewAdded -= HandleInteractorViewAdded;
-        }
-    }
-    
     private void HandleInteractorAdded(SnapInteractor interactor)
     {
         if (_currentInteractor != interactor)
@@ -48,6 +25,29 @@ public class SnapInteractableVisuals : MonoBehaviour
 
             _currentInteractor = interactor;
             SetupGhostModel(interactor);
+        }
+    }
+    
+    
+    private void OnEnable()
+    {
+        if (_snapInteractable != null)
+        {
+            _snapInteractable.WhenInteractorViewAdded += HandleInteractorViewAdded;
+            _snapInteractable.WhenInteractorViewRemoved += HandleInteractorViewRemoved;
+            _snapInteractable.WhenInteractorAdded.Action += HandleInteractorAdded;
+            _snapInteractable.WhenSelectingInteractorViewAdded += HandleSelectingInteractorViewAdded;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (_snapInteractable != null)
+        {
+            _snapInteractable.WhenInteractorAdded.Action -= HandleInteractorAdded;
+            _snapInteractable.WhenSelectingInteractorViewAdded -= HandleSelectingInteractorViewAdded;
+            _snapInteractable.WhenInteractorViewRemoved -= HandleInteractorViewRemoved;
+            _snapInteractable.WhenInteractorViewAdded -= HandleInteractorViewAdded;
         }
     }
 
@@ -89,7 +89,7 @@ public class SnapInteractableVisuals : MonoBehaviour
             MeshFilter ghostMeshFilter = _ghostObject.AddComponent<MeshFilter>();
             ghostMeshFilter.mesh = parentMeshFilter.mesh;
             MeshRenderer ghostRenderer = _ghostObject.AddComponent<MeshRenderer>();
-            ghostRenderer.material = _hoverMaterial;
+            ghostRenderer.material = _ghostMaterial;
         }
         
         MeshFilter[] meshFilters = parentTransform.GetComponentsInChildren<MeshFilter>(includeInactive: true);
@@ -102,15 +102,13 @@ public class SnapInteractableVisuals : MonoBehaviour
 
             GameObject childGhost = new GameObject(meshFilter.gameObject.name);
             childGhost.transform.SetParent(_ghostObject.transform, false);
-            childGhost.transform.localPosition = meshFilter.transform.localPosition;
             childGhost.transform.localRotation = meshFilter.transform.localRotation;
             childGhost.transform.localScale = meshFilter.transform.localScale;
-
+            childGhost.transform.localPosition = meshFilter.transform.localPosition;
             MeshFilter childMeshFilter = childGhost.AddComponent<MeshFilter>();
             childMeshFilter.mesh = meshFilter.mesh;
-
             MeshRenderer childRenderer = childGhost.AddComponent<MeshRenderer>();
-            childRenderer.material = _hoverMaterial;
+            childRenderer.material = _ghostMaterial;
         }
     }
 }
