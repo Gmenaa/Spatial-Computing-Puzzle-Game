@@ -19,33 +19,36 @@ public class RodGameManagerHelper : MonoBehaviour
             Transform childTransform = rod.transform.GetChild(i);
             SnapInteractable snapPos = childTransform.GetComponent<SnapInteractable>();
 
-            if (snapPos != null && snapPos.SelectingInteractors.Any())
+            if (snapPos != null && snapPos.Interactors.Any())
             {
                 SnapInteractor diskInteractor = snapPos.Interactors.FirstOrDefault();
                 if (diskInteractor != null)
                 {
                     GameObject disk = diskInteractor.transform.parent.gameObject;
                     HanoiDisk hanoiDisk = disk.GetComponent<HanoiDisk>();
+                    
                     diskSizes.Add(hanoiDisk.diskSize);
                 }
             }
         }
-
-        if (diskSizes.Count == 4 && IsOrderedAscending(diskSizes))
+        if (diskSizes.Count == 4 && IsOrderedDescending(diskSizes))
         {
             _gameManager.HandleWin();
         }
     }
 
-    private bool IsOrderedAscending(List<int> sizes)
+    private bool IsOrderedDescending(List<int> sizes)
     {
+        if (sizes.Count == 0) return false;
+
         for (int i = 1; i < sizes.Count; i++)
         {
-            if (sizes[i] <= sizes[i - 1])
+            if (sizes[i] >= sizes[i - 1])
             {
                 return false;
             }
         }
+
         return true;
     }
     
