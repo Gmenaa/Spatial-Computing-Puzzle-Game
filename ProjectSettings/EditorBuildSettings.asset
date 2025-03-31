@@ -8,9 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HanoiTower.unity
     guid: 75fa6b4ba76ac4b1c96afa0acaec0d5c
+  - enabled: 1
+    path: Assets/Scenes/BallMaze.unity
+    guid: 40c3810d38ea741278f0ed9fc3abba1c
+  - enabled: 0
+    path: Assets/Scenes/chemcomb.unity
+    guid: 29e7613a76e6b644e84e48fd4707979a
+  - enabled: 0
+    path: Assets/Scenes/pipes.unity
+    guid: e73f028512a7e9046a6ad65cf750404d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c019306a33d1340ce9f404e8a8052e2f,
       type: 2}
