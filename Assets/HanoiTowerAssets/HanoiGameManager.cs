@@ -17,6 +17,15 @@ public class GameManager : MonoBehaviour
 
     public void HandleWin()
     {
+        GameLoop gameLoop = FindObjectOfType<GameLoop>();
+        if (gameLoop != null)
+        {
+            gameLoop.TriggerWin();
+        }
+        else
+        {
+            Debug.LogError("GameLoop not found in scene!");
+        }
         winMessageText.gameObject.SetActive(true);
     }
 }
