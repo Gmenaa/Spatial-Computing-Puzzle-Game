@@ -11,11 +11,12 @@ TagManager:
   - redBeaker
   - MazeBall
   - Disk
+  - Mirror
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hide For Mirror
   - Water
   - UI
   - 
