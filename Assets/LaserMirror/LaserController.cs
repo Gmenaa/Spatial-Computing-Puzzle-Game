@@ -4,7 +4,6 @@ public class LaserController : MonoBehaviour
 {
     public Transform laserEmitter;       // Reference to the emitter
     public LineRenderer lineRenderer;      // LineRenderer for visualizing the laser
-    // public int maxReflections = 1;         // How many reflections you want
     public float maxDistance = 100f;       // Maximum ray distance
 
     public LayerMask mirrorLayerMask;
@@ -25,7 +24,7 @@ public class LaserController : MonoBehaviour
         while (true)
         {
             RaycastHit hit;
-            // Add the QueryTriggerInteraction parameter to ignore triggers
+            // QueryTriggerInteraction to ignore trigger colliders
             if (Physics.Raycast(currentOrigin, currentDirection, out hit, maxDistance, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
             {
                 lineRenderer.positionCount += 1;
