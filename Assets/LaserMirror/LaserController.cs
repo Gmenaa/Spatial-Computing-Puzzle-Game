@@ -1,0 +1,53 @@
+using UnityEngine;
+
+public class LaserController : MonoBehaviour
+{
+    public Transform laserEmitter;       // Reference to the emitter
+    public LineRenderer lineRenderer;      // LineRenderer for visualizing the laser
+    // public int maxReflections = 1;         // How many reflections you want
+    public float maxDistance = 100f;       // Maximum ray distance
+
+    public LayerMask mirrorLayerMask;
+
+    void Update()
+    {
+        CastLaser(laserEmitter.position, laserEmitter.forward);
+    }
+
+    void CastLaser(Vector3 origin, Vector3 direction)
+    {
+        lineRenderer.positionCount = 1;
+        lineRenderer.SetPosition(0, origin);
+
+        Vector3 currentOrigin = origin;
+        Vector3 currentDirection = direction;
+
+        while (true)
+        {
+            RaycastHit hit;
+            // Add the QueryTriggerInteraction parameter to ignore triggers
+            if (Physics.Raycast(currentOrigin, currentDirection, out hit, maxDistance, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+            {
+                lineRenderer.positionCount += 1;
+                lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
+
+                if (hit.collider.CompareTag("Mirror"))
+                {
+                    currentDirection = Vector3.Reflect(currentDirection, hit.normal);
+                    currentOrigin = hit.point + currentDirection * 0.05f;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            else
+            {
+                lineRenderer.positionCount += 1;
+                lineRenderer.SetPosition(lineRenderer.positionCount - 1, currentOrigin + currentDirection * maxDistance);
+                break;
+            }
+        }
+    }
+
+}
