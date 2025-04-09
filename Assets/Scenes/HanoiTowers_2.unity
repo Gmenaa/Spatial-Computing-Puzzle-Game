@@ -27713,7 +27713,15 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   rod: {fileID: 6564901855873307423}
   isStartedRod: 0
-  initialDisks: []
+  initialDisks:
+  - {fileID: 7182651839970878361}
+  - {fileID: 1942583945559335327}
+  - {fileID: 2319220117755225868}
+  - {fileID: 421243732}
+  - {fileID: 45475077}
+  - {fileID: 1109930250}
+  - {fileID: 1658274297}
+  - {fileID: 3618435290043115370}
 --- !u!1 &811712887731233974
 GameObject:
   m_ObjectHideFlags: 0
