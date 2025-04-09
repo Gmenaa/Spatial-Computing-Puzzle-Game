@@ -59,6 +59,13 @@ public class RodGameManagerHelper : MonoBehaviour
                 }
             }
         }
+        
+        if (diskSizes.Count >= 2 && !IsOrderedDescending(diskSizes))
+        {
+            _gameManager.HandleLose();
+            return;
+        }
+        
         if (diskSizes.Count == 4 && IsOrderedDescending(diskSizes) && !isStartedRod)
         {
             _gameManager.HandleWin();
