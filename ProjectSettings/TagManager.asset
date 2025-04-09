@@ -12,6 +12,7 @@ TagManager:
   - MazeBall
   - Disk
   - Mirror
+  - LaserTarget
   layers:
   - Default
   - TransparentFX
