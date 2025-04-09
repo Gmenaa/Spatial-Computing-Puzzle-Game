@@ -5,11 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/HanoiTowers.unity
+    guid: 75fa6b4ba76ac4b1c96afa0acaec0d5c
+  - enabled: 0
+    path: Assets/Scenes/BallMaze.unity
+    guid: 40c3810d38ea741278f0ed9fc3abba1c
+  - enabled: 0
+    path: Assets/Scenes/chemcomb.unity
+    guid: 29e7613a76e6b644e84e48fd4707979a
+  - enabled: 0
+    path: Assets/Scenes/pipes.unity
+    guid: e73f028512a7e9046a6ad65cf750404d
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c019306a33d1340ce9f404e8a8052e2f,
-      type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5a9db43ead6ad4ee1b9a320eb05b6681,
-      type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c019306a33d1340ce9f404e8a8052e2f, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 24dfffe06dcb1a64fba0b65dc7b77d69, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5a9db43ead6ad4ee1b9a320eb05b6681, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 8c1b4b4197381b6458a0ea69d5dffc5f, type: 2}
