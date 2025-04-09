@@ -1,0 +1,54 @@
+{
+    "name": "PipeActionSet",
+    "maps": [
+        {
+            "name": "PipeControls",
+            "id": "b3ab1fab-a88c-4137-b3fd-851c59cc2503",
+            "actions": [
+                {
+                    "name": "RotateRight",
+                    "type": "Button",
+                    "id": "8bfbed8c-4dce-46cc-bb2f-938e56869b63",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotateLeft",
+                    "type": "Button",
+                    "id": "c35c2b19-a565-4303-9611-758ff3e9fde5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "65720ae8-0351-4e7b-9e8e-bcab7616712c",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "285ba201-59fe-46ce-84ea-5b3609c83aa0",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
