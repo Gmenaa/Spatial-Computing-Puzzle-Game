@@ -35,6 +35,30 @@ public class LaserController : MonoBehaviour
                     currentDirection = Vector3.Reflect(currentDirection, hit.normal);
                     currentOrigin = hit.point + currentDirection * 0.05f;
                 }
+                else if (hit.collider.CompareTag("LaserTarget"))
+                {
+                    Renderer targetRenderer = hit.collider.GetComponent<Renderer>();
+                    if (targetRenderer != null)
+                    {
+                        targetRenderer.material.color = Color.green;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("The LaserTarget object does not have a Renderer component!");
+                    }
+
+                    GameLoop gameLoop = FindObjectOfType<GameLoop>();
+                    if (gameLoop != null)
+                    {
+                        // Trigger the win condition in GameLoop
+                        gameLoop.TriggerWin();
+                    }
+                    else
+                    {
+                        Debug.LogError("GameLoop not found in scene!");
+                    }
+                    break;
+                }
                 else
                 {
                     break;
