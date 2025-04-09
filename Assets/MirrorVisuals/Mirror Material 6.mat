@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mirror Material
+  m_Name: Mirror Material 6
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 8400000, guid: 6f638a1e3f17345138f2b0d648c79821, type: 2}
+        m_Texture: {fileID: 8400000, guid: dd1ec6cb033bf46499d24fb03e6a3049, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -127,8 +127,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.16862746, b: 0.29411766, a: 1}
-    - _Color: {r: 0, g: 0.16862741, b: 0.29411763, a: 1}
+    - _BaseColor: {r: 0.6189036, g: 0.6751347, b: 0.7169812, a: 1}
+    - _Color: {r: 0.61890346, g: 0.6751347, b: 0.7169812, a: 1}
     - _EmissionColor: {r: 0.7019608, g: 0.7019608, b: 0.7019608, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
