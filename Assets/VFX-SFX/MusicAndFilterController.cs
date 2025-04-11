@@ -20,6 +20,7 @@ public class MusicAndFilterController : MonoBehaviour
     public Volume volume;  // Volume that contains post processing effects.
     private Vignette vignette;
     private ChromaticAberration chromaticAberration;
+    private FilmGrain filmGrain;
  
     [Header("Additional Effects Settings")]
     public float finalBloomIntensity = 1.5f;
@@ -45,7 +46,7 @@ public class MusicAndFilterController : MonoBehaviour
         {
             volume.profile.TryGet(out vignette);
             volume.profile.TryGet(out chromaticAberration);
-            // volume.profile.TryGet(out filmGrain);
+            volume.profile.TryGet(out filmGrain);
  
             volume.profile.TryGet(out bloom);
             volume.profile.TryGet(out lensDistortion);
@@ -56,8 +57,8 @@ public class MusicAndFilterController : MonoBehaviour
                 vignette.intensity.value = 0f;
             if (chromaticAberration != null)
                 chromaticAberration.intensity.value = 0f;
-            // if (filmGrain != null)
-            //     filmGrain.intensity.value = 0f;
+            if (filmGrain != null)
+                filmGrain.intensity.value = 0f;
  
             if (bloom != null)
                 bloom.intensity.value = 0f;
@@ -81,14 +82,27 @@ public class MusicAndFilterController : MonoBehaviour
         // Update the music volume gradually (0 -> finalVolume).
         if (audioSource != null)
             audioSource.volume = Mathf.Lerp(0f, finalVolume, progress);
+            Debug.Log("Audio Volume: " + audioSource.volume);
  
         // Update base screen effects.
         if (vignette != null)
             vignette.intensity.value = Mathf.Lerp(0f, 1f, progress);
         if (chromaticAberration != null)
             chromaticAberration.intensity.value = Mathf.Lerp(0f, 1f, progress);
-        // if (filmGrain != null)
-        //     filmGrain.intensity.value = Mathf.Lerp(0f, 1f, progress);
+        if (filmGrain != null)
+        {
+            if (timer.TimeRemaining <= 60f)
+            {
+                // Calculate progress over the final minute.
+                float filmGrainProgress = Mathf.Clamp01((60f - timer.TimeRemaining) / 60f);
+                filmGrain.intensity.value = Mathf.Lerp(0f, 1f, filmGrainProgress);
+            }
+            else
+            {
+                filmGrain.intensity.value = 0f;
+            }
+        }
+            
  
         // Update additional effects for tension.
         if (bloom != null)
@@ -117,7 +131,7 @@ public class MusicAndFilterController : MonoBehaviour
         float startVolume = (audioSource != null) ? audioSource.volume : 0f;
         float startVignette = (vignette != null) ? vignette.intensity.value : 0f;
         float startChromatic = (chromaticAberration != null) ? chromaticAberration.intensity.value : 0f;
-        // float startFilmGrain = (filmGrain != null) ? filmGrain.intensity.value : 0f;
+        float startFilmGrain = (filmGrain != null) ? filmGrain.intensity.value : 0f;
         float startBloom = (bloom != null) ? bloom.intensity.value : 0f;
         float startLensDistortion = (lensDistortion != null) ? lensDistortion.intensity.value : 0f;
         float startSaturation = (colorAdjustments != null) ? colorAdjustments.saturation.value : 0f;
@@ -138,8 +152,8 @@ public class MusicAndFilterController : MonoBehaviour
                 vignette.intensity.value = Mathf.Lerp(startVignette, 0f, t);
             if (chromaticAberration != null)
                 chromaticAberration.intensity.value = Mathf.Lerp(startChromatic, 0f, t);
-            // if (filmGrain != null)
-            //     filmGrain.intensity.value = Mathf.Lerp(startFilmGrain, 0f, t);
+            if (filmGrain != null)
+                filmGrain.intensity.value = Mathf.Lerp(startFilmGrain, 0f, t);
  
             // Fade additional effects -> 0.
             if (bloom != null)
@@ -159,8 +173,8 @@ public class MusicAndFilterController : MonoBehaviour
             vignette.intensity.value = 0f;
         if (chromaticAberration != null)
             chromaticAberration.intensity.value = 0f;
-        // if (filmGrain != null)
-        //     filmGrain.intensity.value = 0f;
+        if (filmGrain != null)
+            filmGrain.intensity.value = 0f;
         if (bloom != null)
             bloom.intensity.value = 0f;
         if (lensDistortion != null)
