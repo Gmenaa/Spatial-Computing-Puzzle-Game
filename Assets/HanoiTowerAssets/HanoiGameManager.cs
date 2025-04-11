@@ -9,55 +9,30 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public TMP_Text winMessageText;
-    public GameObject[] rods;
-    public int totalDisks = 4;
-
-    void Start()
+    public TMP_Text loseMessageText;
+    
+    private void Start()
     {
-        if (winMessageText != null)
-            winMessageText.gameObject.SetActive(false);
+        winMessageText.gameObject.SetActive(false);
+        loseMessageText.gameObject.SetActive(false);
     }
 
-    void Update()
+    public void HandleWin()
     {
-        CheckWinCondition();
-    }
-
-    void CheckWinCondition()
-    {
-        foreach (GameObject rod in rods)
+        GameLoop gameLoop = FindObjectOfType<GameLoop>();
+        if (gameLoop != null)
         {
-            bool rodIsCorrect = true;
-            for (int pos = 1; pos <= totalDisks; pos++)
-            {
-                string positionName = rod.name + "diskPosition" + pos;
-                Transform posTransform = rod.transform.Find(positionName);
-                if (posTransform == null)
-                {
-                    rodIsCorrect = false;
-                    break;
-                }
-                if (posTransform.childCount == 0)
-                {
-                    rodIsCorrect = false;
-                    break;
-                }
-                GameObject disk = posTransform.GetChild(0).gameObject;
-                string expectedDiskName = "SquareHanoiDisk" + (totalDisks - pos + 1);
-                if (disk.name != expectedDiskName)
-                {
-                    rodIsCorrect = false;
-                    break;
-                }
-            }
-            if (rodIsCorrect)
-            {
-                if (winMessageText != null)
-                    winMessageText.gameObject.SetActive(true);
-                return;
-            }
+            gameLoop.TriggerWin();
         }
-        if (winMessageText != null)
-            winMessageText.gameObject.SetActive(false);
+        else
+        {
+            Debug.LogError("GameLoop not found in scene!");
+        }
+        winMessageText.gameObject.SetActive(true);
+    }
+
+    public void HandleLose()
+    {
+        loseMessageText.gameObject.SetActive(true);
     }
 }

@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PipeRotatorNinety : MonoBehaviour
 {
@@ -9,32 +9,29 @@ public class PipeRotatorNinety : MonoBehaviour
     private PipeConnection pipeConnection;
     private bool isRotating = false;
 
+    public InputActionProperty rotateRightAction;
+    public InputActionProperty rotateLeftAction;
+
     void Start()
     {
         pipeConnection = GetComponent<PipeConnection>();
+
+        rotateRightAction.action.Enable();
+        rotateLeftAction.action.Enable();
     }
 
     void Update()
     {
         if (isRotating) return;
 
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        if (rotateRightAction.action.WasPressedThisFrame())
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                if (hit.transform == transform) //Check if THIS pipe was clicked
-                {
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        StartCoroutine(RotatePipeSmooth(Vector3.forward * rotationAngle));
-                    }
-                    else if (Input.GetMouseButtonDown(1))
-                    {
-                        StartCoroutine(RotatePipeSmooth(Vector3.up * rotationAngle));
-                    }
-                }
-            }
+            StartCoroutine(RotatePipeSmooth(Vector3.forward * rotationAngle));
+        }
+
+        if (rotateLeftAction.action.WasPressedThisFrame())
+        {
+            StartCoroutine(RotatePipeSmooth(Vector3.up * rotationAngle));
         }
     }
 
@@ -56,7 +53,6 @@ public class PipeRotatorNinety : MonoBehaviour
         transform.rotation = endRotation;
         isRotating = false;
 
-        // Re-check connections after rotating
         PipeConnection[] allPipes = FindObjectsOfType<PipeConnection>();
         foreach (PipeConnection pipe in allPipes)
         {

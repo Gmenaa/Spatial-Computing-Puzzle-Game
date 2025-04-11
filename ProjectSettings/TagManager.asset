@@ -13,15 +13,17 @@ TagManager:
   - Disk
   - Projectile
   - attackBot
+  - Mirror
+  - LaserTarget
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hide For Mirror
   - Water
   - UI
-  - 
-  - 
+  - Mirror
+  - Laser
   - 
   - 
   - 
