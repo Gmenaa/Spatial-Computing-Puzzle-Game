@@ -11,6 +11,8 @@ TagManager:
   - redBeaker
   - MazeBall
   - Disk
+  - Projectile
+  - attackBot
   layers:
   - Default
   - TransparentFX
