@@ -5268,6 +5268,9 @@ MonoBehaviour:
   levelCompleteClip: {fileID: 8300000, guid: 87d9f189a9d9f4ca98d902fb5531a028, type: 3}
   gameOverClip: {fileID: 8300000, guid: cb7f8712a4e994e1ba0d220958db131e, type: 3}
   volume: {fileID: 786063702}
+  finalBloomIntensity: 1.5
+  finalLensDistortionIntensity: -0.2
+  finalSaturation: -20
 --- !u!4 &413481353
 Transform:
   m_ObjectHideFlags: 0
