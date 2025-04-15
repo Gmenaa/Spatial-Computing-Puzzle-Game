@@ -11,6 +11,8 @@ TagManager:
   - redBeaker
   - MazeBall
   - Disk
+  - Projectile
+  - attackBot
   - Mirror
   - LaserTarget
   layers:
