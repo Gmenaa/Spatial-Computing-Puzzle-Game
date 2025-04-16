@@ -21,11 +21,11 @@ public class CC_Object_Placement_Manager_Script : MonoBehaviour
         // initialize the correct order
         correctOrder = new List<GameObject>
         {
-            GameObject.FindWithTag("redBeaker"),
             GameObject.FindWithTag("yellowBeaker"),
+            GameObject.FindWithTag("redBeaker"),
+            GameObject.FindWithTag("orangeBeaker"),
             GameObject.FindWithTag("blueBeaker"),
-            GameObject.FindWithTag("greenBeaker"),
-            GameObject.FindWithTag("orangeBeaker")
+            GameObject.FindWithTag("greenBeaker")
         };
 
         // success and failure assets are hidden initially JUST FOR TESTING!
