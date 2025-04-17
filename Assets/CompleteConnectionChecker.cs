@@ -6,43 +6,58 @@ public class CompleteConnectionChecker : MonoBehaviour
 {
     public PipeConnection startPipe;
     public PipeConnection endPipe;
-    public Color completeColor = Color.blue;
 
     public void CheckFullConnection()
     {
-        if (IsPathComplete(startPipe, endPipe))
+        List<PipeConnection> connectedPath = GetConnectedPath(startPipe, endPipe);
+
+        if (connectedPath != null)
         {
-            Debug.Log("Puzzle Solved! Pipes are fully connected.");
-            PipeConnection[] allPipes = FindObjectsOfType<PipeConnection>();
-            foreach (PipeConnection pipe in allPipes)
+            foreach (PipeConnection pipe in connectedPath)
             {
-                pipe.ChangeColor(completeColor);
+                pipe.SetComplete();
             }
         }
     }
 
-    private bool IsPathComplete(PipeConnection start, PipeConnection end)
+    private List<PipeConnection> GetConnectedPath(PipeConnection start, PipeConnection end)
     {
-        HashSet<PipeConnection> visited = new HashSet<PipeConnection>();
+        Dictionary<PipeConnection, PipeConnection> cameFrom = new Dictionary<PipeConnection, PipeConnection>();
         Queue<PipeConnection> queue = new Queue<PipeConnection>();
+        HashSet<PipeConnection> visited = new HashSet<PipeConnection>();
 
         queue.Enqueue(start);
         visited.Add(start);
 
         while (queue.Count > 0)
         {
-            PipeConnection currentPipe = queue.Dequeue();
-            if (currentPipe == end) return true;
+            PipeConnection current = queue.Dequeue();
 
-            foreach (PipeConnection otherPipe in FindObjectsOfType<PipeConnection>())
+            if (current == end)
             {
-                if (!visited.Contains(otherPipe) && currentPipe.IsConnectedTo(otherPipe))
+                List<PipeConnection> path = new List<PipeConnection>();
+                PipeConnection node = end;
+                while (node != null)
                 {
-                    visited.Add(otherPipe);
-                    queue.Enqueue(otherPipe);
+                    path.Add(node);
+                    cameFrom.TryGetValue(node, out node);
+                }
+                path.Reverse();
+                return path;
+            }
+
+            foreach (PipeConnection neighbor in FindObjectsOfType<PipeConnection>())
+            {
+                if (!visited.Contains(neighbor) && current.IsConnectedTo(neighbor))
+                {
+                    visited.Add(neighbor);
+                    cameFrom[neighbor] = current;
+                    queue.Enqueue(neighbor);
                 }
             }
         }
-        return false;
+
+        return null;
     }
+
 }
