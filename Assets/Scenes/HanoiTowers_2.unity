@@ -616,6 +616,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d98930fd791174a518e4c3e48330041c, type: 2}
     - target: {fileID: 919132149155446097, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
       propertyPath: m_Name
       value: SquareHanoiDisk5
@@ -2460,7 +2464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &185549681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5699,6 +5703,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c948758aa1a947b48e328c307cf310a, type: 2}
     - target: {fileID: 919132149155446097, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
       propertyPath: m_Name
       value: SquareHanoiDisk4
@@ -7061,6 +7069,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7371950968139528420, guid: 5a61cb82346d74401abba23bb516e133, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c948758aa1a947b48e328c307cf310a, type: 2}
     - target: {fileID: 919132149155446097, guid: 5a61cb82346d74401abba23bb516e133, type: 3}
       propertyPath: m_Name
       value: LabDesk
@@ -14309,6 +14321,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 804e11c5d34d6462aa438c73be1c9470, type: 2}
     - target: {fileID: 919132149155446097, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
       propertyPath: m_Name
       value: SquareHanoiDisk6
@@ -15053,7 +15069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1142954795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17832,6 +17848,7 @@ MonoBehaviour:
   isGameOver: 0
   restartGame: 0
   musicAndFilterController: {fileID: 0}
+  gameOverCanvas: {fileID: 0}
 --- !u!114 &1328740601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19046,7 +19063,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3c8fb10107506c545a99892b0f04d28d, type: 2}
+  - {fileID: 2100000, guid: 2b2fc76f517e64bf997db3b1c6b3942b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22011,6 +22028,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d36675acc2c574f13ba709677ca68b6c, type: 2}
     - target: {fileID: 919132149155446097, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
       propertyPath: m_Name
       value: SquareHanoiDisk7
@@ -27518,7 +27539,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
+  - {fileID: 2100000, guid: f77f0a915bb664c7c930b84beb221fbf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28319,7 +28340,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
+  - {fileID: 2100000, guid: 2e48fa5a6114d499e875c015245dfb36, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28572,7 +28593,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
+  - {fileID: 2100000, guid: d36675acc2c574f13ba709677ca68b6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28692,7 +28713,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3222d1e9ab778478aaab7d091ed9383c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29536,7 +29557,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3222d1e9ab778478aaab7d091ed9383c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29655,7 +29676,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3222d1e9ab778478aaab7d091ed9383c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29976,7 +29997,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: de4db1a663a80406dac280cf9ad591b8, type: 3}
+  - {fileID: 2100000, guid: e1ebccc357f9944a39e4c7c48128d112, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30116,7 +30137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3222d1e9ab778478aaab7d091ed9383c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
