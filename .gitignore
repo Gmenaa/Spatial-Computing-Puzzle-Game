@@ -80,3 +80,6 @@ crashlytics-build.properties
 .vscode/
 Assets/Oculus/OculusProjectConfig.asset
 Assets/Oculus/OculusProjectConfig.asset
+
+**/*BurstDebugInformation_DoNotShip/
+
