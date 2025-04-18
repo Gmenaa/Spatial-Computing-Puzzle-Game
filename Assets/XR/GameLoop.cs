@@ -42,6 +42,10 @@ public class GameLoop : MonoBehaviour
     [SerializeField]
     private MusicAndFilterController musicAndFilterController;
 
+    [SerializeField]
+    private GameObject gameOverCanvas;
+
+
     // handlers
 
     void HandleSolved()
@@ -84,6 +88,13 @@ public class GameLoop : MonoBehaviour
     {
         isSolved = true;
     }
+    //restart button
+    public void RestartCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 
     void HandleGameOver()
     {
@@ -104,6 +115,11 @@ public class GameLoop : MonoBehaviour
 
         // FIXME:
             // restartGame will need to be updated upon user interaction with the menuu
+            //ui integrated
+        if (gameOverCanvas != null)
+        {
+            gameOverCanvas.SetActive(true);
+        }
 
         if (restartGame)
         {
@@ -152,5 +168,6 @@ public class GameLoop : MonoBehaviour
             isGameOver = true;
             HandleGameOver();
         }
+
     }
 }

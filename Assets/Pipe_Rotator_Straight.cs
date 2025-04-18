@@ -1,6 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PipeRotatorStraight : MonoBehaviour
 {
@@ -9,45 +9,27 @@ public class PipeRotatorStraight : MonoBehaviour
     private PipeConnection pipeConnection;
     private bool isRotating = false;
 
-    public InputActionProperty rotateRightAction;
-    public InputActionProperty rotateLeftAction;
-
-    public Transform leftHandAnchor;
-    public Transform rightHandAnchor;
-
-    void Start()
-    {
-        pipeConnection = GetComponent<PipeConnection>();
-
-        rotateRightAction.action.Enable();
-        rotateLeftAction.action.Enable();
-    }
-
     void Update()
     {
         if (isRotating) return;
 
-        if (rotateRightAction.action.WasPressedThisFrame())
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
-            Vector3 rightControllerPosition = rightHandAnchor.position;
-            float distanceToRightHand = Vector3.Distance(transform.position, rightControllerPosition);
-            float interactionRange = 1.0f;
-            if (distanceToRightHand < interactionRange)
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                StartCoroutine(RotatePipeSmooth(Vector3.up * rotationAngle));
+                if (hit.transform == transform) //Check if THIS pipe was clicked
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        StartCoroutine(RotatePipeSmooth(Vector3.right * rotationAngle));
+                    }
+                    else if (Input.GetMouseButtonDown(1))
+                    {
+                        StartCoroutine(RotatePipeSmooth(Vector3.up * rotationAngle));
+                    }
+                }
             }
-        }
-
-        if (rotateLeftAction.action.WasPressedThisFrame())
-        {
-            Vector3 leftControllerPosition = leftHandAnchor.position;
-            float distanceToLeftHand = Vector3.Distance(transform.position, leftControllerPosition);
-            float interactionRange = 1.0f;
-            if (distanceToLeftHand < interactionRange)
-            {
-                StartCoroutine(RotatePipeSmooth(Vector3.right * rotationAngle));
-            }
-
         }
     }
 
@@ -69,6 +51,7 @@ public class PipeRotatorStraight : MonoBehaviour
         transform.rotation = endRotation;
         isRotating = false;
 
+        // Re-check connections after rotating
         PipeConnection[] allPipes = FindObjectsOfType<PipeConnection>();
         foreach (PipeConnection pipe in allPipes)
         {

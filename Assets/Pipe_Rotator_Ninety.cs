@@ -12,9 +12,6 @@ public class PipeRotatorNinety : MonoBehaviour
     public InputActionProperty rotateRightAction;
     public InputActionProperty rotateLeftAction;
 
-    public Transform leftHandAnchor;
-    public Transform rightHandAnchor;
-
     void Start()
     {
         pipeConnection = GetComponent<PipeConnection>();
@@ -29,25 +26,12 @@ public class PipeRotatorNinety : MonoBehaviour
 
         if (rotateRightAction.action.WasPressedThisFrame())
         {
-            Vector3 rightControllerPosition = rightHandAnchor.position;
-            float distanceToRightHand = Vector3.Distance(transform.position, rightControllerPosition);
-            float interactionRange = 1.0f;
-            if (distanceToRightHand < interactionRange)
-            {
-                StartCoroutine(RotatePipeSmooth(Vector3.forward * rotationAngle));
-            }
+            StartCoroutine(RotatePipeSmooth(Vector3.forward * rotationAngle));
         }
 
         if (rotateLeftAction.action.WasPressedThisFrame())
         {
-            Vector3 leftControllerPosition = leftHandAnchor.position;
-            float distanceToLeftHand = Vector3.Distance(transform.position, leftControllerPosition);
-            float interactionRange = 1.0f;
-            if (distanceToLeftHand < interactionRange)
-            {
-                StartCoroutine(RotatePipeSmooth(Vector3.up * rotationAngle));
-            }
-            
+            StartCoroutine(RotatePipeSmooth(Vector3.up * rotationAngle));
         }
     }
 
