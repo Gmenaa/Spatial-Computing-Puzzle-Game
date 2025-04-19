@@ -69,22 +69,42 @@ public class CC_Object_Placement_Manager_Script : MonoBehaviour
             // next level
             Debug.Log("Correct order!");
             // Show the success asset
-            successAsset.SetActive(true);
+            // successAsset.SetActive(true);
+
+            GameLoop gameLoop = FindObjectOfType<GameLoop>();
+             if (gameLoop != null)
+            {
+                gameLoop.TriggerWin();
+            }
+            else
+            {
+                Debug.LogError("GameLoop not found in scene!");
+            }
         }
         else
         {
             // game over
             Debug.Log("Incorrect order.");
             // Show the failure asset
-            failureAsset.SetActive(true);
+            // failureAsset.SetActive(true);
+            
+            GameLoop gameLoop = FindObjectOfType<GameLoop>();
+             if (gameLoop != null)
+            {
+                gameLoop.TriggerGameOver();
+            }
+            else
+            {
+                Debug.LogError("GameLoop not found in scene!");
+            }
         }
     }
 
-    private void NextLevel()
-    {
-    }
+    // private void NextLevel()
+    // {
+    // }
 
-    private void GameOver()
-    {
-    }
+    // private void GameOver()
+    // {
+    // }
 }

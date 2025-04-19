@@ -28,7 +28,9 @@ public class RayGun : MonoBehaviour
 
     void Update()
     {
-        if (OVRInput.GetDown(shootingButton)){
+        // shoot only on right controller trigger
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger)) 
+        {
             shoot();
         }
     }

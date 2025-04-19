@@ -28,11 +28,20 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("GameLoop not found in scene!");
         }
-        winMessageText.gameObject.SetActive(true);
+        // winMessageText.gameObject.SetActive(true);
     }
 
     public void HandleLose()
     {
-        loseMessageText.gameObject.SetActive(true);
+        // loseMessageText.gameObject.SetActive(true);
+        GameLoop gameLoop = FindObjectOfType<GameLoop>();
+        if (gameLoop != null)
+        {
+            gameLoop.TriggerGameOver();
+        }
+        else
+        {
+            Debug.LogError("GameLoop not found in scene!");
+        }
     }
 }

@@ -23,7 +23,7 @@ public class Timer: MonoBehaviour
 {
     // variables
 
-    [SerializeField]
+    // ! [SerializeField]
     private float initialTimeRemaining;
     public float InitialTimeRemaining {get {return initialTimeRemaining;} set {initialTimeRemaining = value;}}  // the value the timer starts at
 
@@ -60,6 +60,15 @@ public class Timer: MonoBehaviour
     {
         // FIXME: handle time run out
     }
+
+    public void ResetTimer()
+    {
+        rawTimeRemaining = initialTimeRemaining;
+        timeText.text = GetFormattedTime(rawTimeRemaining);
+        isTimerRunning = true;
+        didTimeRunOut = false;
+    }
+
 
     // before first frame
         // initialize variables
