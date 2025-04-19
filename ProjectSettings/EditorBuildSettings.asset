@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HanoiTowers.unity
     guid: 75fa6b4ba76ac4b1c96afa0acaec0d5c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/HanoiTowers_2.unity
     guid: 715a27643491d48d7b823f7ffc7f6b92
   - enabled: 0
