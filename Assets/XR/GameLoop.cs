@@ -157,7 +157,7 @@ public class GameLoop : MonoBehaviour
                 initialTimerValue = 120f; 
                 break;
             case 3: // hanoi 1
-                initialTimerValue = 240f; 
+                initialTimerValue = 180f; 
                 break;
             case 4: // hanoi 2
                 initialTimerValue = 240f; 
