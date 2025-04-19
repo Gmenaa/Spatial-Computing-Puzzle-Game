@@ -15268,9 +15268,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1447144912}
-        m_TargetAssemblyTypeName: hanoisceneloader, Assembly-CSharp
-        m_MethodName: GoToScene4
+      - m_Target: {fileID: 1447144917}
+        m_TargetAssemblyTypeName: bossloader, Assembly-CSharp
+        m_MethodName: GoToSceneboss
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18090,6 +18090,7 @@ GameObject:
   - component: {fileID: 1447144914}
   - component: {fileID: 1447144916}
   - component: {fileID: 1447144915}
+  - component: {fileID: 1447144917}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -18267,6 +18268,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3924e82830cf649f18740ebb34b4210f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1447144917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447144906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a68c8b4bdf8643e5abaad8db04e7411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1449787705
@@ -18982,7 +18995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1508896013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25018,7 +25031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1946507099
 RectTransform:
   m_ObjectHideFlags: 0
