@@ -6252,8 +6252,11 @@ MonoBehaviour:
   finalVolume: 1
   sfxAudioSource: {fileID: 814832258}
   levelCompleteClip: {fileID: 8300000, guid: 87d9f189a9d9f4ca98d902fb5531a028, type: 3}
-  gameOverClip: {fileID: 8300000, guid: cb7f8712a4e994e1ba0d220958db131e, type: 3}
+  gameOverClip: {fileID: 8300000, guid: c5e87b911076f44ba97a2db0fae06a6c, type: 3}
   volume: {fileID: 786063702}
+  finalBloomIntensity: 1.5
+  finalLensDistortionIntensity: -0.2
+  finalSaturation: -20
 --- !u!4 &413481353
 Transform:
   m_ObjectHideFlags: 0
@@ -19041,7 +19044,7 @@ Transform:
   m_GameObject: {fileID: 1276764860}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.99985564, z: -0, w: -0.016994184}
-  m_LocalPosition: {x: 2.155, y: 1.258, z: -0.545}
+  m_LocalPosition: {x: 2.155, y: 1, z: -0.545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20896,7 +20899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 651810060}
-  lightToggleController: {fileID: 0}
+  lightToggleController: {fileID: 1973065124}
   isSolved: 0
   isGameOver: 0
   restartGame: 0
