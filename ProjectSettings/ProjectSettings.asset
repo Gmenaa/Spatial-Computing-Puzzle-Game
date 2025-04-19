@@ -144,8 +144,6 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: 11400000, guid: 08c18a38c88f641609e3abde554e5498, type: 2}
   - {fileID: -944628639613478452, guid: 24dfffe06dcb1a64fba0b65dc7b77d69, type: 3}
-  - {fileID: 7073245300550227148, guid: 5a9db43ead6ad4ee1b9a320eb05b6681, type: 2}
-  - {fileID: 11400000, guid: c019306a33d1340ce9f404e8a8052e2f, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -519,6 +517,13 @@ PlayerSettings:
       m_Width: 1920
       m_Height: 720
       m_Kind: 1
+      m_SubKind: 
+  - m_BuildTarget: VisionOS
+    m_Icons:
+    - m_Textures: []
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 0
       m_SubKind: 
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
