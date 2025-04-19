@@ -163,10 +163,10 @@ public class GameLoop : MonoBehaviour
                 initialTimerValue = 300f; 
                 break;
             case 5: // pipes
-                initialTimerValue = 240f; 
+                initialTimerValue = 120f; 
                 break;
             case 6: // mirrros
-                initialTimerValue = 240f; 
+                initialTimerValue = 120f; 
                 break;
             default:
                 initialTimerValue = 180f; 
