@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BallMaze.unity
     guid: 40c3810d38ea741278f0ed9fc3abba1c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/chemcomb.unity
     guid: 29e7613a76e6b644e84e48fd4707979a
   - enabled: 0
