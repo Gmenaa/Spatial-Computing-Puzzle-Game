@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PipeConnection : MonoBehaviour
 {
@@ -81,5 +81,3 @@ public class PipeConnection : MonoBehaviour
 
 
 }
-
-
