@@ -4,12 +4,12 @@ public class PipeConnection : MonoBehaviour
 {
     public Transform[] connectionPoints;  //Empty child Connection objects marking ends of pipes
     private Renderer pipeRenderer;        //Controls pipe appearance
-    public Color connectedColor = Color.green;
-    public Color defaultColor = Color.white;
+    public Material glowMaterial;
+    public Material defaultMaterial;
+    public Material completeMaterial;
 
     void Start()
     {
-        AlignConnectionPoints();
 
         pipeRenderer = GetComponent<Renderer>();
         if (pipeRenderer == null)
@@ -23,16 +23,7 @@ public class PipeConnection : MonoBehaviour
         }
         else
         {
-            pipeRenderer.material.color = defaultColor;
-        }
-
-        void AlignConnectionPoints() //making sure Connection objects are properly aligned
-        {
-            if (connectionPoints.Length < 2) return;
-
-            //float pipeHeight = GetComponent<MeshRenderer>().bounds.size.y / 2;
-            //connectionPoints[0].localPosition = new Vector3(0, pipeHeight, 0);
-            //connectionPoints[1].localPosition = new Vector3(0, -pipeHeight, 0);
+            pipeRenderer.material = defaultMaterial;
         }
     }
 
@@ -43,11 +34,9 @@ public class PipeConnection : MonoBehaviour
             foreach (Transform otherPoint in otherPipe.connectionPoints)
             {
                 float distance = Vector3.Distance(point.position, otherPoint.position);
-                Debug.Log($"Checking {point.name} (pipe {gameObject.name}) with {otherPoint.name} (pipe {otherPipe.gameObject.name}) - Distance: {distance}");
 
                 if (distance < 0.3f)
                 {
-                    Debug.Log($"Connection found between {gameObject.name} and {otherPipe.gameObject.name} at {point.name} & {otherPoint.name}");
                     return true;
                 }
             }
@@ -68,16 +57,23 @@ public class PipeConnection : MonoBehaviour
             }
         }
 
-        ChangeColor(isConnected ? connectedColor : defaultColor);
+        SetGlow(isConnected);
     }
 
-    public void ChangeColor(Color newColor)
+    public void SetGlow(bool isConnected)
     {
         if (pipeRenderer != null)
         {
-            pipeRenderer.material.color = newColor;
+            pipeRenderer.material = isConnected ? glowMaterial : defaultMaterial;
         }
     }
 
+    public void SetComplete()
+    {
+        if (pipeRenderer != null)
+        {
+            pipeRenderer.material = completeMaterial;
+        }
+    }
 
 }
