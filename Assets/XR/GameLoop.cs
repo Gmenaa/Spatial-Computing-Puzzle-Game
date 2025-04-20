@@ -27,6 +27,8 @@ public class GameLoop : MonoBehaviour
 
     [SerializeField]
     private Timer timer;        // The Timer object
+    [SerializeField]
+    private LightToggleController lightToggleController;
 
     [SerializeField]
     private bool isSolved;      // boolean check whether puzzle has been solved (will be determined by puzzle script)
@@ -35,6 +37,7 @@ public class GameLoop : MonoBehaviour
     private bool isGameOver;    // boolean check whether game is over (causes: timer running out or some loss condition in the puzzle script being met)
 
     private bool isDoorLocked;  // boolean check whether door is locked (gets updated upon puzzle solved)
+    private float initialTimerValue;
 
     [SerializeField]
     private bool restartGame;   // the game over menu will likely have a 'Restart Game' button, this gets sets to true if user clicks restart
@@ -63,6 +66,11 @@ public class GameLoop : MonoBehaviour
             musicAndFilterController.FadeBackToDefaults(2f);
         }
 
+        if (lightToggleController != null)
+        {
+            lightToggleController.ResetLightColor(1f);  
+        }
+
         // FIXME:
             // will need information from the puzzle script whether it is the last room or not
             // right now will be hardcoding as "no", but this should be pulled from the puzzle script
@@ -88,6 +96,12 @@ public class GameLoop : MonoBehaviour
     {
         isSolved = true;
     }
+
+    public void TriggerGameOver()
+    {
+        isGameOver = true;
+    }
+
     //restart button
     public void RestartCurrentScene()
     {
@@ -130,7 +144,39 @@ public class GameLoop : MonoBehaviour
     // before the first frame
     void Start()
     {
-        timer.InitialTimeRemaining = 180f;
+        // set the timer to the correct time depending on index
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        string sceneName = SceneManager.GetActiveScene().name;
+        
+        switch (sceneIndex)
+        {
+            case 1: // ball maze
+                initialTimerValue = 60f; 
+                break;
+            case 2: // chemical combination
+                initialTimerValue = 120f; 
+                break;
+            case 3: // hanoi 1
+                initialTimerValue = 180f; 
+                break;
+            case 4: // hanoi 2
+                initialTimerValue = 300f; 
+                break;
+            case 5: // pipes
+                initialTimerValue = 120f; 
+                break;
+            case 6: // mirrros
+                initialTimerValue = 120f; 
+                break;
+            default:
+                initialTimerValue = 180f; 
+                break;
+        }
+
+    
+        timer.InitialTimeRemaining = initialTimerValue;
+        timer.ResetTimer();
+        
         isSolved = false;
         isDoorLocked = true;
     }

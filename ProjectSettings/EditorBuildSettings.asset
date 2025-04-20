@@ -8,27 +8,30 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/main menu.unity
     guid: 7234a4333f4674e5ca9cc92192f33abd
   - enabled: 0
-    path: Assets/Scenes/HanoiTowers.unity
-    guid: 75fa6b4ba76ac4b1c96afa0acaec0d5c
-  - enabled: 0
-    path: Assets/Scenes/HanoiTowers_2.unity
-    guid: 715a27643491d48d7b823f7ffc7f6b92
-  - enabled: 1
     path: Assets/Scenes/BallMaze.unity
     guid: 40c3810d38ea741278f0ed9fc3abba1c
   - enabled: 0
     path: Assets/Scenes/chemcomb.unity
     guid: 29e7613a76e6b644e84e48fd4707979a
   - enabled: 0
+    path: Assets/Scenes/HanoiTowers.unity
+    guid: 75fa6b4ba76ac4b1c96afa0acaec0d5c
+  - enabled: 0
+    path: Assets/Scenes/HanoiTowers_2.unity
+    guid: 715a27643491d48d7b823f7ffc7f6b92
+  - enabled: 0
     path: Assets/Scenes/pipes.unity
     guid: e73f028512a7e9046a6ad65cf750404d
   - enabled: 0
     path: Assets/Scenes/LaserMirror.unity
     guid: d8ce442888e03497d942531980f99c31
+  - enabled: 1
+    path: Assets/Scenes/finalBoss.unity
+    guid: b967b9ef36354fa49bb18b8440fc7c94
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c019306a33d1340ce9f404e8a8052e2f,
       type: 2}
