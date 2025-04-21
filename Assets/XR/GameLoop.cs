@@ -47,6 +47,13 @@ public class GameLoop : MonoBehaviour
 
     [SerializeField]
     private GameObject gameOverCanvas;
+//for transition
+    [SerializeField] 
+    private float sceneTransitionDelay = 1.5f;
+    [SerializeField]
+    private Animator transitionAnimator;
+    [SerializeField] 
+    private string transitionTrigger = "FadeOut";
 
 
     // handlers
@@ -78,19 +85,31 @@ public class GameLoop : MonoBehaviour
         bool isLastRoom = false; 
         
         if (isLastRoom)
+        
         {
-            // FIXME:
+            // FIXME:Transition
                 // handle winning (game ends and there's a 'you win!' screen)
+                StartCoroutine(LoadSceneWithTransition(8));
+
         }
         else
         {
             isDoorLocked = false;
+            StartCoroutine(LoadSceneWithTransition(SceneManager.GetActiveScene().buildIndex + 1));
 
-            // FIXME:
+            // FIXME:  Transition
                 // use the isDoorLocked check to update appearance of the door object(?)
                 // implement the teleporting the player to the next scene
         }
     }
+  //for transition  
+    IEnumerator LoadSceneWithTransition(int sceneBuildIndex)
+   
+    {
+        yield return new WaitForSeconds(sceneTransitionDelay);
+        SceneManager.LoadScene(sceneBuildIndex);
+    }
+
 
     public void TriggerWin()
     {

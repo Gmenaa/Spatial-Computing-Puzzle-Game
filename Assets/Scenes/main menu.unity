@@ -16128,7 +16128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THE PIPE ROOM
+  m_text: 'THE CHEMICAL COMBINATION '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8cf0e8c5adf7d492cbdb1b51925a17eb, type: 2}
   m_sharedMaterial: {fileID: 8021497941381210562, guid: 8cf0e8c5adf7d492cbdb1b51925a17eb,
@@ -18995,7 +18995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1508896013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25031,7 +25031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1946507099
 RectTransform:
   m_ObjectHideFlags: 0
