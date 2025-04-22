@@ -48,6 +48,17 @@ public class PlayerHealth : MonoBehaviour
     private void GameOver()
     {
         Debug.LogError("Game Over!");
+        
+        GameLoop gameLoop = FindObjectOfType<GameLoop>();
+        if (gameLoop != null)
+        {
+            gameLoop.TriggerGameOver();
+        }
+        else
+        {
+            Debug.LogError("GameLoop not found in scene!");
+        }
+
         Invoke("PauseGame", .2f); // call PauseGame after 2 seconds
     }
 

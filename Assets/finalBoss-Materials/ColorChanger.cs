@@ -92,13 +92,22 @@ public class ColorChanger : MonoBehaviour
         }
 
         Debug.LogError("All squares are green!");
-        AudioSource.PlayClipAtPoint(winAudioClip, transform.position);
+        // AudioSource.PlayClipAtPoint(winAudioClip, transform.position);
+        GameLoop gameLoop = FindObjectOfType<GameLoop>();
+        if (gameLoop != null)
+        {
+            gameLoop.TriggerWin();
+        }
+        else
+        {
+            Debug.LogError("GameLoop not found in scene!");
+        }
 
-            if (pokableButton != null)
-            {
-                pokableButton.SetActive(true); 
-                Debug.LogError("poke it babyyyyy");
-            }
+        if (pokableButton != null)
+        {
+            pokableButton.SetActive(true); 
+            Debug.LogError("poke it babyyyyy");
+        }
 
     }
 }
