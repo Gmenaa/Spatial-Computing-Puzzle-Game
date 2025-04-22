@@ -80,7 +80,35 @@ public class GameLoop : MonoBehaviour
 
         // FIXME:
             // will need information from the puzzle script whether it is the last room or not
-            // right now will be hardcoding as "no", but this should be pulled from the puzzle script
+           // right now will be hardcoding as "no", but this should be pulled from the puzzle script
+/*
+//transition using intro pages
+
+        StartCoroutine(HandleRoomTransition());
+}
+
+IEnumerator HandleRoomTransition()
+{
+    if (transitionAnimator != null)
+    {
+        transitionAnimator.SetTrigger(transitionTrigger);
+        yield return new WaitForSeconds(sceneTransitionDelay);
+    }
+
+    RoomManager roomManager = FindObjectOfType<RoomManager>();
+    if (roomManager != null)
+    {
+        roomManager.LoadNextRoom();
+    }
+
+    // Reset GameLoop variables for the next room
+    isSolved = false;
+    isGameOver = false;
+    isDoorLocked = true;
+
+    timer.ResetTimer();
+}
+*/
 
         bool isLastRoom = false; 
         
@@ -102,6 +130,7 @@ public class GameLoop : MonoBehaviour
                 // implement the teleporting the player to the next scene
         }
     }
+
   //for transition  
     IEnumerator LoadSceneWithTransition(int sceneBuildIndex)
    
@@ -109,7 +138,6 @@ public class GameLoop : MonoBehaviour
         yield return new WaitForSeconds(sceneTransitionDelay);
         SceneManager.LoadScene(sceneBuildIndex);
     }
-
 
     public void TriggerWin()
     {
@@ -127,8 +155,24 @@ public class GameLoop : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+/*
+//transition using intro pages
+    public void RestartCurrentScene()
+{
+    RoomManager roomManager = FindObjectOfType<RoomManager>();
+    if (roomManager != null)
+    {
+        roomManager.RestartCurrentRoom();
+    }
 
+    isSolved = false;
+    isGameOver = false;
+    isDoorLocked = true;
 
+    timer.ResetTimer();
+}
+
+*/
     void HandleGameOver()
     {
         // FIXME:
