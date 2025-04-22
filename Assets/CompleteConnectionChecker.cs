@@ -17,6 +17,20 @@ public class CompleteConnectionChecker : MonoBehaviour
             {
                 pipe.SetComplete();
             }
+
+            // ! I THINK THIS IS WHERE TO PUT THE WIN CONDITION
+            // ! IF NOT, CHAMGE TO CORRECT PLACE
+            // ! THIS SCEEN DOES NOT NEED gameloop.TriggerGameOver();
+            GameLoop gameLoop = FindObjectOfType<GameLoop>();
+            if (gameLoop != null)
+            {
+                // Trigger the win condition in GameLoop
+                gameLoop.TriggerWin();
+            }
+            else
+            {
+                Debug.LogError("GameLoop not found in scene!");
+            }
         }
     }
 
