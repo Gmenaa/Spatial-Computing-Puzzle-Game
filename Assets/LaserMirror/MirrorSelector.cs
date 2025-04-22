@@ -1,37 +1,31 @@
 using UnityEngine;
+using Oculus.Interaction;
+using Oculus.Interaction.Input;
 
 public class MirrorSelector : MonoBehaviour
 {
-    [Header("Pointer Settings")]
-    public Transform rayOrigin;        
-    public float rayDistance = 10f;    
-    public LayerMask mirrorLayer;      
+    [SerializeField] private Transform _pointerTransform;
+    [SerializeField] private float _rayDistance = 10f;
+    [SerializeField] private LayerMask _mirrorMask;
 
-    private MirrorRotator hoveredMirror;
+    private MirrorRotator _hoveredMirror;
 
     void Update()
     {
-        Ray ray = new Ray(rayOrigin.position, rayOrigin.forward);
-        Debug.DrawRay(rayOrigin.position, rayOrigin.forward * rayDistance, Color.blue); // ? debugging
+        // Origin & direction from child transform
+        Vector3 origin  = _pointerTransform.position;
+        Vector3 forward = _pointerTransform.forward;
 
+        Debug.DrawRay(origin, forward * _rayDistance, Color.cyan);
 
-        // Check if the ray hits a mirror
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, rayDistance, mirrorLayer))
-        {
-            hoveredMirror = hit.collider.GetComponent<MirrorRotator>();
-        }
+        // Raycast against Mirror layer
+        if (Physics.Raycast(origin, forward, out var hit, _rayDistance, _mirrorMask))
+            _hoveredMirror = hit.collider.GetComponent<MirrorRotator>();
         else
-        {
-            hoveredMirror = null;
-        }
+            _hoveredMirror = null;
 
-        // Rotate the mirror by pressing A button
-        if (hoveredMirror != null && OVRInput.GetDown(OVRInput.Button.One))
-        {
-            hoveredMirror.RotateMirror();
-        }
+        // On A, rotate the mirror
+        if (_hoveredMirror != null && OVRInput.GetDown(OVRInput.Button.One))
+            _hoveredMirror.RotateMirror();
     }
 }
-
-// ! Apply to tracking space > hand anchors

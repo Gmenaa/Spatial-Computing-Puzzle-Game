@@ -56,6 +56,11 @@ public class GameLoop : MonoBehaviour
     private string transitionTrigger = "FadeOut";
 
 
+    [SerializeField] private TypewriterEffect terminalTypewriter;
+    [TextArea(5,10)]
+    [SerializeField] private string finalBossVictoryText;
+
+
     // handlers
 
     void HandleSolved()
@@ -110,16 +115,16 @@ IEnumerator HandleRoomTransition()
 }
 */
 
-        bool isLastRoom = false; 
-        
-        if (isLastRoom)
-        
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "finalBoss")
         {
-            // FIXME:Transition
-                // handle winning (game ends and there's a 'you win!' screen)
-                StartCoroutine(LoadSceneWithTransition(8));
+            Debug.Log("Final room solved!");
 
+            // Play typewriter message on the terminal:
+            if (terminalTypewriter != null)
+                terminalTypewriter.Play(finalBossVictoryText);
         }
+
         else
         {
             isDoorLocked = false;
@@ -220,16 +225,19 @@ IEnumerator HandleRoomTransition()
                 initialTimerValue = 120f; 
                 break;
             case 3: // hanoi 1
-                initialTimerValue = 180f; 
+                initialTimerValue = 150f; 
                 break;
             case 4: // hanoi 2
-                initialTimerValue = 300f; 
+                initialTimerValue = 240f; 
                 break;
             case 5: // pipes
-                initialTimerValue = 120f; 
+                initialTimerValue = 180f; 
                 break;
             case 6: // mirrros
-                initialTimerValue = 120f; 
+                initialTimerValue = 180f; 
+                break;
+            case 7: // boss 
+                initialTimerValue = 9999f; // This is only a helper, boss level will not have a timer, keep this value high
                 break;
             default:
                 initialTimerValue = 180f; 
@@ -251,32 +259,20 @@ IEnumerator HandleRoomTransition()
         {
             if (isGameOver)
             {
-                // FIXME:
-                    // to start with, this check will just be flipped manually in Unity
-                    // will need to set isGameOver to true upon some loss condition in the puzzle being met
-
                 timer.StopTheTimer();
                 HandleGameOver();
             }
             
             if (isSolved)
             {
-                // FIXME:
-                    // to start with, this check will just be flipped manually in Unity
-                    // will need to set isSolved to true upon some win condition in the puzzle being met
-
                 timer.StopTheTimer();
                 HandleSolved();
             }
         }
-        else if (timer.DidTimeRunOut && !isGameOver)
+        else if (timer.DidTimeRunOut && !isGameOver && SceneManager.GetActiveScene().name != "finalBoss") // ! DOUBLE CHECK THIS
         {
-            // FIXME:
-                // handle the situation that the timer has run out
-            
             isGameOver = true;
             HandleGameOver();
         }
-
     }
 }
