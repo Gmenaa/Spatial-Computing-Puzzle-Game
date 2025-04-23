@@ -44,22 +44,6 @@ public class PipeConnection : MonoBehaviour
         return false;
     }
 
-    public void CheckAndUpdateColor(PipeConnection[] allPipes)
-    {
-        bool isConnected = false;
-
-        foreach (PipeConnection otherPipe in allPipes)
-        {
-            if (otherPipe != this && IsConnectedTo(otherPipe))
-            {
-                isConnected = true;
-                break; // Stop checking if we find a valid connection
-            }
-        }
-
-        SetGlow(isConnected);
-    }
-
     public void SetGlow(bool isConnected)
     {
         if (pipeRenderer != null)
