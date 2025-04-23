@@ -35270,6 +35270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placementManager: {fileID: 143323659}
+  sfxAudioSource: {fileID: 2013321882}
+  beakerPlaceClip: {fileID: 8300000, guid: 263e3cc9bb7184151ad2781684ed86f2, type: 3}
 --- !u!1 &1359742138
 GameObject:
   m_ObjectHideFlags: 0
