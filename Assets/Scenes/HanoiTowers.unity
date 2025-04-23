@@ -29593,6 +29593,11 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 1355570408}
+    - target: {fileID: 2702765192095329671, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
+        type: 3}
+      propertyPath: numberOfDisks
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3511612682069145974, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -29603,6 +29608,11 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 1355570408}
+    - target: {fileID: 3782626033368738266, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
+        type: 3}
+      propertyPath: numberOfDisks
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3900649170133177944, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -29677,6 +29687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isStartedRod
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4313732385970353449, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
+        type: 3}
+      propertyPath: numberOfDisks
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4313732385970353449, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
         type: 3}
