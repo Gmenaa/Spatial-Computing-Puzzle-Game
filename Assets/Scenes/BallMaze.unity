@@ -5793,6 +5793,7 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 814832258}
   levelCompleteClip: {fileID: 8300000, guid: 87d9f189a9d9f4ca98d902fb5531a028, type: 3}
   gameOverClip: {fileID: 8300000, guid: c5e87b911076f44ba97a2db0fae06a6c, type: 3}
+  tenSecondCountdown: {fileID: 8300000, guid: 7dab34e29f3ac42278c2969e189b1c13, type: 3}
   volume: {fileID: 786063702}
   finalBloomIntensity: 1.5
   finalLensDistortionIntensity: -0.2
@@ -11245,8 +11246,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 7dab34e29f3ac42278c2969e189b1c13, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
