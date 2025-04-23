@@ -56067,6 +56067,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   rod: {fileID: 2578974177396363239}
   isStartedRod: 0
+  numberOfDisks: 8
   initialDisks: []
 --- !u!4 &399141567700379445
 Transform:
@@ -56165,6 +56166,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   rod: {fileID: 6564901855873307423}
   isStartedRod: 0
+  numberOfDisks: 8
   initialDisks:
   - {fileID: 7182651839970878361}
   - {fileID: 1942583945559335327}
@@ -56305,6 +56307,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   rod: {fileID: 354805019385642807}
   isStartedRod: 0
+  numberOfDisks: 8
   initialDisks: []
 --- !u!114 &1537740914414508325
 MonoBehaviour:

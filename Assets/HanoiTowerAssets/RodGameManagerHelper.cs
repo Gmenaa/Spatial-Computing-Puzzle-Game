@@ -8,6 +8,7 @@ public class RodGameManagerHelper : MonoBehaviour
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private GameObject rod;
     [SerializeField] private bool isStartedRod;
+    [SerializeField] private int numberOfDisks = 4;
     
     [SerializeField] private List<GameObject> initialDisks;
     
@@ -66,7 +67,7 @@ public class RodGameManagerHelper : MonoBehaviour
             return;
         }
         
-        if (diskSizes.Count == 4 && IsOrderedDescending(diskSizes) && !isStartedRod)
+        if (diskSizes.Count == numberOfDisks && IsOrderedDescending(diskSizes) && !isStartedRod)
         {
             _gameManager.HandleWin();
         }
