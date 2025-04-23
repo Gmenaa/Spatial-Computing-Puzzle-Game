@@ -187,5 +187,6 @@ MonoBehaviour:
   connectionPoints:
   - {fileID: 4701389347973408673}
   - {fileID: 439735454473130461}
-  connectedColor: {r: 0, g: 1, b: 0, a: 1}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  glowMaterial: {fileID: 2100000, guid: 03ea479b4cf11144a86b508173f67602, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 077b7790bc6164683ba6edfd58c996db, type: 2}
+  completeMaterial: {fileID: 2100000, guid: 59ed4573e37f89847ac5ff0bac268137, type: 2}
