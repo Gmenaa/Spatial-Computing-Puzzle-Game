@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6700200830398567991}
   - component: {fileID: 7085437824467207883}
   - component: {fileID: 4516282076130490834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Straight pipe.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,9 +61,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -126,8 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectionPoints:
   - {fileID: 8679372007574700590}
-  connectedColor: {r: 0, g: 1, b: 0, a: 1}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  glowMaterial: {fileID: 2100000, guid: 03ea479b4cf11144a86b508173f67602, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 077b7790bc6164683ba6edfd58c996db, type: 2}
+  completeMaterial: {fileID: 2100000, guid: 59ed4573e37f89847ac5ff0bac268137, type: 2}
 --- !u!1 &8316875948091535460
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8679372007574700590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection
   m_TagString: Untagged
   m_Icon: {fileID: 0}

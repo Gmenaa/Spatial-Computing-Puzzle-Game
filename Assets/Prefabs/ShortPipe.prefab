@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3553344015466484815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2089716192898321750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShortPipe
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3524f3180df367c41814c2917a064d39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -201,7 +206,7 @@ MonoBehaviour:
   - {fileID: 2089716192898321750}
   - {fileID: 3553344015466484815}
   glowMaterial: {fileID: 2100000, guid: 03ea479b4cf11144a86b508173f67602, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 11face102ab0171488e4733e240d1f34, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 077b7790bc6164683ba6edfd58c996db, type: 2}
   completeMaterial: {fileID: 2100000, guid: 59ed4573e37f89847ac5ff0bac268137, type: 2}
 --- !u!114 &355109013939899179
 MonoBehaviour:
@@ -217,31 +222,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationAngle: 90
   rotationDuration: 0.3
-  rotateRightAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Rotate Right
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 302a260c-07e1-4e66-8b34-afb0b4f0ca33
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -372535228812107457, guid: 266dac46ea694a44990614fed033199f,
-      type: 3}
-  rotateLeftAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Rotate Left
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 1b327ebb-00a9-47c8-9ae3-d5c7db3b9560
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 5428105351768688680, guid: 266dac46ea694a44990614fed033199f,
-      type: 3}
-  leftHandAnchor: {fileID: 0}
-  rightHandAnchor: {fileID: 0}

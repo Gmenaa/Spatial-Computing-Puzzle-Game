@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2953470448190451121}
   - component: {fileID: 4381465292306654887}
   - component: {fileID: 7582776407247026820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Z pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,9 +63,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -106,8 +103,9 @@ MonoBehaviour:
   connectionPoints:
   - {fileID: 7925033265374586661}
   - {fileID: 3059484017294759332}
-  connectedColor: {r: 0, g: 1, b: 0, a: 1}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  glowMaterial: {fileID: 2100000, guid: 03ea479b4cf11144a86b508173f67602, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 077b7790bc6164683ba6edfd58c996db, type: 2}
+  completeMaterial: {fileID: 2100000, guid: 59ed4573e37f89847ac5ff0bac268137, type: 2}
 --- !u!114 &4381465292306654887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationAngle: 90
+  rotationDuration: 0.3
 --- !u!136 &7582776407247026820
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -153,7 +152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7925033265374586661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3059484017294759332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
