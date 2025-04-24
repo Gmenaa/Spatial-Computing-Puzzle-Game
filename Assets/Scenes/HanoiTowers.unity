@@ -1270,7 +1270,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 44af77665b42b4d1d8cf58449020f941, type: 2}
+      objectReference: {fileID: 2100000, guid: 61d04e4673d5eee4db4b4a56100bc2bd, type: 2}
     - target: {fileID: 919132149155446097, guid: 5a61cb82346d74401abba23bb516e133,
         type: 3}
       propertyPath: m_Name
@@ -5998,7 +5998,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -29654,6 +29654,11 @@ PrefabInstance:
       objectReference: {fileID: 1355570408}
     - target: {fileID: 4313732385970353449, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
         type: 3}
+      propertyPath: diskMoveClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 22a983e3113ba4e30b88dfde549d4efb, type: 3}
+    - target: {fileID: 4313732385970353449, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
+        type: 3}
       propertyPath: isStartedRod
       value: 1
       objectReference: {fileID: 0}
@@ -29662,6 +29667,11 @@ PrefabInstance:
       propertyPath: numberOfDisks
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4313732385970353449, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
+        type: 3}
+      propertyPath: sfxAudioSource
+      value: 
+      objectReference: {fileID: 467985556}
     - target: {fileID: 4313732385970353449, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
         type: 3}
       propertyPath: initialDisks.Array.size
@@ -29696,7 +29706,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 63f9d42035e7846d8b4b55681b4ff775, type: 2}
+      objectReference: {fileID: 2100000, guid: 2724f52775eb544ec967efeea6296d10, type: 2}
     - target: {fileID: 5999797623477929914, guid: 10e1a6e9e2e7b45d6bf9f160d374aa1b,
         type: 3}
       propertyPath: m_Name

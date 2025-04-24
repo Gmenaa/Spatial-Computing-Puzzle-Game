@@ -10,6 +10,13 @@ public class RodGameManagerHelper : MonoBehaviour
     [SerializeField] private bool isStartedRod;
     [SerializeField] private int numberOfDisks = 4;
     
+    [Header("Disk-Move SFX")]
+    [SerializeField] private AudioSource sfxAudioSource;    // assign via Inspector
+    [SerializeField] private AudioClip diskMoveClip;        // your “move” sound
+    [SerializeField] private float moveCooldown = 0.1f;     // debounce so it won’t spam
+    private float lastMoveTime;
+
+    
     [SerializeField] private List<GameObject> initialDisks;
     
     private List<int> diskSizes = new List<int>();
@@ -77,6 +84,14 @@ public class RodGameManagerHelper : MonoBehaviour
     
     private void HandleInteractorRemoved(SnapInteractor interactor)
     {
+        // play a disk move sound, but only once per cooldown 
+        if (Time.time - lastMoveTime > moveCooldown 
+        && sfxAudioSource != null 
+        && diskMoveClip != null)
+    {
+        sfxAudioSource.PlayOneShot(diskMoveClip);
+        lastMoveTime = Time.time;
+    }
         UpdateDiskInteractability();
         UpdateSnapInteractableAvailability();
     }

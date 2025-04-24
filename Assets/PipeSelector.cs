@@ -12,12 +12,20 @@ public class PipeSelector : MonoBehaviour
     [SerializeField] private InputActionProperty rotateLeftAction;
     [SerializeField] private InputActionProperty rotateRightAction;
 
+    [Header("SFX")]
+    [SerializeField] private AudioSource sfxAudioSource;   
+    [SerializeField] private AudioClip pipeTurnClip;      
+
     private MonoBehaviour hoveredRotator;
 
     void Start()
     {
         rotateLeftAction.action.Enable();
         rotateRightAction.action.Enable();
+
+        // auto-grab an AudioSource on this GameObject
+        if (sfxAudioSource == null)
+            sfxAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -39,10 +47,20 @@ public class PipeSelector : MonoBehaviour
         if (hoveredRotator != null)
         {
             if (rotateRightAction.action.WasPressedThisFrame())
+            {
+                if (sfxAudioSource != null && pipeTurnClip != null) // play sound effect
+                    sfxAudioSource.PlayOneShot(pipeTurnClip);
+                
                 hoveredRotator.Invoke("RotateRight", 0f);
+            }
 
             if (rotateLeftAction.action.WasPressedThisFrame())
+            {
+                if (sfxAudioSource != null && pipeTurnClip != null)
+                    sfxAudioSource.PlayOneShot(pipeTurnClip);
+                
                 hoveredRotator.Invoke("RotateLeft", 0f);
+            }
         }
     }
 }
