@@ -12862,7 +12862,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 44af77665b42b4d1d8cf58449020f941, type: 2}
+      objectReference: {fileID: 2100000, guid: 4283a36cac30c364eb744bc838071691, type: 2}
     - target: {fileID: 919132149155446097, guid: 5a61cb82346d74401abba23bb516e133,
         type: 3}
       propertyPath: m_Name
@@ -56005,6 +56005,9 @@ MonoBehaviour:
   rod: {fileID: 2578974177396363239}
   isStartedRod: 0
   numberOfDisks: 8
+  sfxAudioSource: {fileID: 0}
+  diskMoveClip: {fileID: 0}
+  moveCooldown: 0.1
   initialDisks: []
 --- !u!4 &399141567700379445
 Transform:
@@ -56104,6 +56107,9 @@ MonoBehaviour:
   rod: {fileID: 6564901855873307423}
   isStartedRod: 0
   numberOfDisks: 8
+  sfxAudioSource: {fileID: 0}
+  diskMoveClip: {fileID: 0}
+  moveCooldown: 0.1
   initialDisks:
   - {fileID: 7182651839970878361}
   - {fileID: 1942583945559335327}
@@ -56245,6 +56251,9 @@ MonoBehaviour:
   rod: {fileID: 354805019385642807}
   isStartedRod: 0
   numberOfDisks: 8
+  sfxAudioSource: {fileID: 0}
+  diskMoveClip: {fileID: 0}
+  moveCooldown: 0.1
   initialDisks: []
 --- !u!114 &1537740914414508325
 MonoBehaviour:
@@ -58520,7 +58529,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 63f9d42035e7846d8b4b55681b4ff775, type: 2}
+  - {fileID: 2100000, guid: 2724f52775eb544ec967efeea6296d10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
