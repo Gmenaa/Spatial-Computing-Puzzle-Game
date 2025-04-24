@@ -1,16 +1,12 @@
 using UnityEngine;
 using Oculus.Interaction;
 using Oculus.Interaction.Input;
-using UnityEngine.InputSystem;
 
 public class PipeSelector : MonoBehaviour
 {
     [SerializeField] private Transform pointerTransform;
     [SerializeField] private float rayDistance = 10f;
     [SerializeField] private LayerMask pipeMask;
-
-    [SerializeField] private InputActionProperty rotateLeftAction;
-    [SerializeField] private InputActionProperty rotateRightAction;
 
     [Header("SFX")]
     [SerializeField] private AudioSource sfxAudioSource;   
@@ -20,8 +16,7 @@ public class PipeSelector : MonoBehaviour
 
     void Start()
     {
-        rotateLeftAction.action.Enable();
-        rotateRightAction.action.Enable();
+
 
         // auto-grab an AudioSource on this GameObject
         if (sfxAudioSource == null)
@@ -46,7 +41,7 @@ public class PipeSelector : MonoBehaviour
 
         if (hoveredRotator != null)
         {
-            if (rotateRightAction.action.WasPressedThisFrame())
+            if (OVRInput.GetDown(OVRInput.Button.One))
             {
                 if (sfxAudioSource != null && pipeTurnClip != null) // play sound effect
                     sfxAudioSource.PlayOneShot(pipeTurnClip);
@@ -54,7 +49,7 @@ public class PipeSelector : MonoBehaviour
                 hoveredRotator.Invoke("RotateRight", 0f);
             }
 
-            if (rotateLeftAction.action.WasPressedThisFrame())
+            if (OVRInput.GetDown(OVRInput.RawButton.X))
             {
                 if (sfxAudioSource != null && pipeTurnClip != null)
                     sfxAudioSource.PlayOneShot(pipeTurnClip);
