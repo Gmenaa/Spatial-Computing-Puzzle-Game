@@ -36683,6 +36683,7 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 260998473}
   levelCompleteClip: {fileID: 8300000, guid: 87d9f189a9d9f4ca98d902fb5531a028, type: 3}
   gameOverClip: {fileID: 8300000, guid: c5e87b911076f44ba97a2db0fae06a6c, type: 3}
+  tenSecondCountdown: {fileID: 8300000, guid: 7dab34e29f3ac42278c2969e189b1c13, type: 3}
   volume: {fileID: 404454225}
   finalBloomIntensity: 1.5
   finalLensDistortionIntensity: -0.2

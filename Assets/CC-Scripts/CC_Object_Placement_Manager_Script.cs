@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CC_Object_Placement_Manager_Script : MonoBehaviour
 {
+
+   
     // correct order to place beakers
    public List<GameObject> correctOrder; 
     // order player placed beakers
@@ -36,6 +38,9 @@ public class CC_Object_Placement_Manager_Script : MonoBehaviour
     // function called when beaker is placed in the vessel
     public void OnObjectPlaced(GameObject placedObject)
     {
+
+   
+
         // Add the player placed beaker to the list
         placedObjects.Add(placedObject); 
 

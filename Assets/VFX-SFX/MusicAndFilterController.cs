@@ -15,6 +15,7 @@ public class MusicAndFilterController : MonoBehaviour
     public AudioSource sfxAudioSource;      // AudioSource dedicated to SFX
     public AudioClip levelCompleteClip;     
     public AudioClip gameOverClip;         
+    public AudioClip tenSecondCountdown;
  
     [Header("Post Processing Volume")]
     public Volume volume;  // Volume that contains post processing effects.
@@ -30,6 +31,7 @@ public class MusicAndFilterController : MonoBehaviour
     private Bloom bloom;
     private LensDistortion lensDistortion;
     private ColorAdjustments colorAdjustments;
+    private bool countdownPlayed = false;
  
     // Track whether we are fading out/resetting effects.
     private bool isResetting = false;
@@ -74,6 +76,15 @@ public class MusicAndFilterController : MonoBehaviour
         // If we're in the middle of resetting/fading out, skip the normal update logic.
         if (isResetting)
             return;
+
+        // Only trigger our 10-second countdown SFX once
+        if (!countdownPlayed && timer.TimeRemaining <= 10f)
+        {
+            if (sfxAudioSource != null && tenSecondCountdown != null)
+                sfxAudioSource.PlayOneShot(tenSecondCountdown);
+
+        countdownPlayed = true;
+        }
  
         // Calculate progress from 0 (timer start) to 1 (time's up).
         float progress = (timer.InitialTimeRemaining - timer.TimeRemaining) / timer.InitialTimeRemaining;
