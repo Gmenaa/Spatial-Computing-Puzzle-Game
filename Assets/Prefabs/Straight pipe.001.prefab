@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6700200830398567991}
   - component: {fileID: 7085437824467207883}
   - component: {fileID: 4516282076130490834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Straight pipe.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8679372007574700590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection
   m_TagString: Untagged
   m_Icon: {fileID: 0}

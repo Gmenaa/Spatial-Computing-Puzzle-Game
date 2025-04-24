@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8236029935176297285}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1859119206765877389}
   - component: {fileID: 5244305402316086595}
   - component: {fileID: 4632566794978213883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Straight pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8768939714113273119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection
   m_TagString: Untagged
   m_Icon: {fileID: 0}

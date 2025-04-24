@@ -42331,7 +42331,7 @@ MonoBehaviour:
   rayDistance: 10
   pipeMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   rotateLeftAction:
     m_UseReference: 1
     m_Action:

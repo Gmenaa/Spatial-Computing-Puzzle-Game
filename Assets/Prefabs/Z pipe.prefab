@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2953470448190451121}
   - component: {fileID: 4381465292306654887}
   - component: {fileID: 7582776407247026820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Z pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7925033265374586661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3059484017294759332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Connection (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
