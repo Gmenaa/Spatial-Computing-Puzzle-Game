@@ -45967,7 +45967,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -56005,8 +56005,8 @@ MonoBehaviour:
   rod: {fileID: 2578974177396363239}
   isStartedRod: 0
   numberOfDisks: 8
-  sfxAudioSource: {fileID: 0}
-  diskMoveClip: {fileID: 0}
+  sfxAudioSource: {fileID: 1746315081}
+  diskMoveClip: {fileID: 8300000, guid: 22a983e3113ba4e30b88dfde549d4efb, type: 3}
   moveCooldown: 0.1
   initialDisks: []
 --- !u!4 &399141567700379445
@@ -56107,8 +56107,8 @@ MonoBehaviour:
   rod: {fileID: 6564901855873307423}
   isStartedRod: 0
   numberOfDisks: 8
-  sfxAudioSource: {fileID: 0}
-  diskMoveClip: {fileID: 0}
+  sfxAudioSource: {fileID: 1746315081}
+  diskMoveClip: {fileID: 8300000, guid: 22a983e3113ba4e30b88dfde549d4efb, type: 3}
   moveCooldown: 0.1
   initialDisks:
   - {fileID: 7182651839970878361}
@@ -56251,8 +56251,8 @@ MonoBehaviour:
   rod: {fileID: 354805019385642807}
   isStartedRod: 0
   numberOfDisks: 8
-  sfxAudioSource: {fileID: 0}
-  diskMoveClip: {fileID: 0}
+  sfxAudioSource: {fileID: 1746315081}
+  diskMoveClip: {fileID: 8300000, guid: 22a983e3113ba4e30b88dfde549d4efb, type: 3}
   moveCooldown: 0.1
   initialDisks: []
 --- !u!114 &1537740914414508325
