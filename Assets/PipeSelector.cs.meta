@@ -3,7 +3,10 @@ guid: 8b48ce2d5c45297438760bd2b37286f9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pointerTransform: {instanceID: 0}
+  - sfxAudioSource: {instanceID: 0}
+  - pipeTurnClip: {fileID: 8300000, guid: a5b02bb37ef914e9faa4dbef297c2b28, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
