@@ -218,25 +218,25 @@ IEnumerator HandleRoomTransition()
         
         switch (sceneIndex)
         {
-            case 1: // ball maze
+            case 1: // * ball maze
                 initialTimerValue = 60f; 
                 break;
-            case 2: // chemical combination
+            case 2: // * chemical combination
                 initialTimerValue = 120f; 
                 break;
-            case 3: // hanoi 1
-                initialTimerValue = 150f; 
+            case 3: // * hanoi 1
+                initialTimerValue = 90f; 
                 break;
-            case 4: // hanoi 2
-                initialTimerValue = 240f; 
+            case 4: // * hanoi 2
+                initialTimerValue = 330f; 
                 break;
-            case 5: // pipes
-                initialTimerValue = 180f; 
+            case 5: // * pipes
+                initialTimerValue = 300f; 
                 break;
-            case 6: // mirrros
-                initialTimerValue = 180f; 
+            case 6: // * mirrros
+                initialTimerValue = 270f; 
                 break;
-            case 7: // boss 
+            case 7: // * boss 
                 initialTimerValue = 9999f; // This is only a helper, boss level will not have a timer, keep this value high
                 break;
             default:
